@@ -45,7 +45,7 @@ describe('First Api Tests', () => {
         const response = await agent.patch('https://httpbin.org/patch').send(query);
         
         expect(response.status).to.equal(statusCode.OK);
-        expect(response.body.args).to.eql(query);
+        expect(response.body.json).to.eql(query);
     });
 
     it('Consume PUT Service with query parameters', async () => {
@@ -58,7 +58,7 @@ describe('First Api Tests', () => {
         const response = await agent.put('https://httpbin.org/put').send(query);
         
         expect(response.status).to.equal(statusCode.OK);
-        expect(response.body.args).to.eql(query);
+        expect(response.body.json).to.eql(query);
     });
 
     it('Consume DELETE Service with query parameters', async () => {
@@ -71,7 +71,7 @@ describe('First Api Tests', () => {
         const response = await agent.delete('https://httpbin.org/delete').send(query);
         
         expect(response.status).to.equal(statusCode.OK);
-        expect(response.body.args).to.eql(query);
+        expect(response.body.json).to.eql(query);
     });
     
 });
