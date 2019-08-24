@@ -4,7 +4,11 @@
   "description": "This is a Workshop about Api Testing in JavaScript",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "mocha -t 5000 --reporter mochawesome --reporter-options reportDir=report,reportFilename=ApiTesting"
+=======
+    "test": "mocha -t 5000"
+>>>>>>> master
   },
   "repository": {
     "type": "git",
