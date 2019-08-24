@@ -26,9 +26,6 @@ describe('First Api Tests', () => {
         expect(response.body.args).to.eql(query);
     });
 
-
-
-    
     it('Consume HEAD Service with query parameters', async () => {
        
 
@@ -45,12 +42,11 @@ describe('First Api Tests', () => {
           city: 'New York'
         };
 
-        const response = await agent.patch('https://httpbin.org/patch').query(query);
+        const response = await agent.patch('https://httpbin.org/patch').send(query);
         
         expect(response.status).to.equal(statusCode.OK);
         expect(response.body.args).to.eql(query);
     });
-
 
     it('Consume PUT Service with query parameters', async () => {
         const query = {
@@ -59,7 +55,7 @@ describe('First Api Tests', () => {
           city: 'New York'
         };
 
-        const response = await agent.put('https://httpbin.org/put').query(query);
+        const response = await agent.put('https://httpbin.org/put').send(query);
         
         expect(response.status).to.equal(statusCode.OK);
         expect(response.body.args).to.eql(query);
@@ -72,7 +68,7 @@ describe('First Api Tests', () => {
           city: 'New York'
         };
 
-        const response = await agent.delete('https://httpbin.org/delete').query(query);
+        const response = await agent.delete('https://httpbin.org/delete').send(query);
         
         expect(response.status).to.equal(statusCode.OK);
         expect(response.body.args).to.eql(query);
